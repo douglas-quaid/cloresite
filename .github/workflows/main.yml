@@ -17,7 +17,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-            az storage blob upload-batch --account-name datdevstorage --auth-mode key -d '$web' -s .
+            az storage blob upload-batch --account-name datdevstorage --auth-mode login -d '$web' -s .
 
     - name: Purge CDN
       run:
