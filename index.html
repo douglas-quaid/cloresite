@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>  
+        h1{
+            color: #18bcc2;
+        }
+        h2{  
+        color: #cd5c5c;}  
+        p{  
+        color: #20b2aa;  
+        font-style: italic;}  
+     </style>  
+<h1>
+Ayy lmao
+</h1>
+<h2>
+    Dis ma website
+</h2>
+<p> 
+This a dogebread
+</p>
+
+<img src="https://i1.sndcdn.com/avatars-000610945608-v8vkw5-t500x500.jpg">
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+	fetch('https://datwebcounter.azurewebsites.net/api/httptrigger2')
+    // Successful API call
+    .then(function (response) {
+	return response.text();})
+    
+    // Print HTML
+    .then(function (html) {
+        document.getElementById("demo").innerHTML = html;})
+    
+    // Log error
+	.catch(function (err) {	
+	console.warn('Something went wrong.', err);
+	});
+}
+document.onload = myFunction();
+</script>
+
+<p>NewTestLine for purgecdn 
+    and another test line</p>
+
+</body>
+</html>
