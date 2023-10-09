@@ -12,6 +12,15 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
+        
+    - name: Azure Blob Upload with Destination folder defined
+      uses: LanceMcCarthy/Action-AzureBlobUpload@v2
+      with:
+        connection_string: ${{ secrets.CONNECTION_STRING }}
+        container_name: datdevstorage
+        source_folder: web
+        destination_folder: $web
+        clean_destination_folder: true
 
     - name: Purge CDN
       run:
